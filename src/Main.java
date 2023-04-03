@@ -24,7 +24,7 @@ public class Main {
      */
     private static int getFibonacciLastDigitFast(int n){
         if (n <= 1) {
-            return n;
+            return n % 10;
         } else {
             int[] array = new int[n + 1];
 
