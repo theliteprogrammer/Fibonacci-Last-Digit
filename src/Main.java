@@ -27,6 +27,7 @@ public class Main {
             return n;
         } else {
             int[] array = new int[n + 1];
+
             array[0] = 0;
             array[1] = 1;
             for(int i = 2; i < array.length; ++i) {
