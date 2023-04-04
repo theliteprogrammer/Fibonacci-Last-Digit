@@ -24,23 +24,23 @@ public class Main {
      * @param n - The last term of a fibonacci sequence
      * @return
      */
-    private static BigInteger getFibonacciLastDigitFast(int n){
+    private static long getFibonacciLastDigitFast(int n){
         if (n <= 1) {
-            return BigInteger.valueOf(n);
+            return n;
         }
-        BigInteger[] array = new BigInteger[n + 1];
-        array[0] = BigInteger.valueOf(0);
-        array[1] = BigInteger.valueOf(1);
+        long[] array = new long[n + 1];
+        array[0] = 0;
+        array[1] = 1;
         for(int i = 2; i < array.length; i++) {
-            array[i] = array[i - 1].add(array[i - 2]);
+            array[i] = array[i - 1] + array[i - 2];
         }
-        return array[n].mod(BigInteger.valueOf(10));
+        return array[n] % 10;
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        BigInteger c = getFibonacciLastDigitFast(n);
+        long c = getFibonacciLastDigitFast(n);
         System.out.println(c);
     }
 }
