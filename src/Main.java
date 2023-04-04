@@ -31,11 +31,8 @@ public class Main {
         BigInteger[] array = new BigInteger[n + 1];
         array[0] = BigInteger.valueOf(0);
         array[1] = BigInteger.valueOf(1);
-        System.out.println("0: " + array[0]);
-        System.out.println("1: " + array[1]);
         for(int i = 2; i < array.length; i++) {
             array[i] = array[i - 1].add(array[i - 2]);
-            System.out.println(i + ": " + array[i]);
         }
         return array[n].mod(BigInteger.valueOf(10));
     }
